@@ -18,12 +18,14 @@ app.use(express.json());
 // urlencoded
 app.use(express.urlencoded({ extended: true }));
 app.use(ratelimiter);
-connectDB();
-app.use("/api/notes", notesRoutes);
 
-app.listen(PORT, () => {
-  console.log("server start at port 😏😏😏😏😏😉" + PORT);
+app.use("/api/notes", notesRoutes);
+connectDB().then(() => {
+  app.listen(PORT, () => {
+    console.log("server start at port 😏😏😏😏😏😉" + PORT);
+  });
 });
+
 export default app;
 
 // rate limiting
