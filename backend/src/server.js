@@ -11,6 +11,10 @@ const app = express();
 
 // middleware
 // cors
+// allow cross origin requests
+// so that frontend can access backend
+// for security reasons browsers block cross origin requests by default
+
 app.use(cors());
 // body parser->req.body
 app.use(express.json());

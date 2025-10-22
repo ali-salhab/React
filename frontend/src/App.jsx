@@ -7,12 +7,9 @@ import toast from "react-hot-toast";
 import { Toaster } from "react-hot-toast";
 function App() {
   return (
-    <div>
+    <div data-theme="coffee" className="">
       <Toaster position="top-right" reverseOrder={false} />
 
-      <button onClick={() => toast.success("siuccccccccccccc")}>
-        notification
-      </button>
       <Routes>
         <Route path="/" element={<HomePags />}></Route>
         <Route path="/create" element={<CreatePage />}></Route>
